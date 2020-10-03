@@ -1,17 +1,19 @@
-from typing import Tuple, Union
+from typing import Tuple, Union, Iterable
 
+from melodia.core.sgnature import Signature
 from melodia.core.tone import Tone
 
 
 class Note:
-    __slots__ = ('_tone', '_velocity', '_signature')
+    __slots__ = ('_tone', '_velocity', '_duration')
 
     def __init__(
             self,
             tone: Union[Tone, int, str],
-            velocity: float,
-            signature: Tuple[int, int]
+            duration: Union[Signature, Tuple[int, int]] = Signature(1, 1),
+            velocity: float = 1.0
     ):
+        self._tone: Tone
         if isinstance(tone, Tone):
             self._tone = tone
         elif isinstance(tone, int):
@@ -19,17 +21,20 @@ class Note:
         elif isinstance(tone, str):
             self._tone = Tone.from_notation(tone)
         else:
-            raise ValueError('tone must be Tone object, integer or string')
+            raise ValueError('tone must be a Tone object, an integer or a string')
+
+        self._duration: Signature
+        if isinstance(duration, Signature):
+            self._duration = duration
+        elif isinstance(duration, Iterable):
+            self._duration = Signature(*duration)
+        else:
+            raise ValueError('duration must be a Signature object or a pair of integers')
 
         if not 0.0 <= velocity <= 1.0:
             raise ValueError('velocity must be in range [0.0, 1.0]')
 
-        self._velocity = velocity
-
-        if not signature[0] > 0 or not signature[1] > 0:
-            raise ValueError('signature must be a pair of positive integers')
-
-        self._signature = signature
+        self._velocity: float = velocity
 
     @property
     def tone(self) -> Tone:
@@ -40,25 +45,41 @@ class Note:
         return self._velocity
 
     @property
-    def signature(self) -> Tuple[int, int]:
-        return self._signature
+    def duration(self) -> Signature:
+        return self._duration
 
     def transposed(self, transposition: int) -> 'Note':
         return Note(
             tone=self._tone.transposed(transposition),
             velocity=self._velocity,
-            signature=self._signature
+            duration=self._duration
         )
 
-    def __repr__(self):
+    def _as_triplet(self) -> Tuple[Tone, Signature, float]:
+        return self._tone, self._duration, self._velocity
+
+    def __repr__(self) -> str:
         name = self.__class__.__name__
         pitch = self._tone.pitch
         velocity = self._velocity
-        signature = f'({self._signature[0]}, {self._signature[1]})'
+        duration = f'({self._duration.nominator}, {self._duration.denominator})'
 
-        return f'{name}(tone={pitch}, velocity={velocity}, signature={signature}) '
+        return f'{name}(tone={pitch}, duration={duration}, velocity={velocity}) '
 
-    def __str__(self):
-        signature = f'{self._signature[0]}/{self._signature[1]}'
+    def __str__(self) -> str:
+        return f'Note {str(self._duration)} {str(self._tone)} ({self._velocity:.3f})'
 
-        return f'{signature} {self._tone.to_notation()} ({self._velocity:.3f})'
+    def __eq__(self, other: 'Note') -> bool:
+        return self._as_triplet() == other._as_triplet()
+
+    def __le__(self, other: 'Note') -> bool:
+        return self._as_triplet() <= other._as_triplet()
+
+    def __lt__(self, other: 'Note') -> bool:
+        return self._as_triplet() < other._as_triplet()
+
+    def __ge__(self, other: 'Note') -> bool:
+        return self._as_triplet() >= other._as_triplet()
+
+    def __gt__(self, other: 'Note') -> bool:
+        return self._as_triplet() > other._as_triplet()

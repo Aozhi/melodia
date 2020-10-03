@@ -182,3 +182,15 @@ class Tone:
 
     def __eq__(self, other: 'Tone') -> bool:
         return self._pitch == other._pitch
+
+    def __le__(self, other: 'Tone') -> bool:
+        return self._pitch <= other._pitch
+
+    def __lt__(self, other: 'Tone') -> bool:
+        return self._pitch < other._pitch
+
+    def __ge__(self, other: 'Tone') -> bool:
+        return self._pitch >= other._pitch
+
+    def __gt__(self, other: 'Tone') -> bool:
+        return self._pitch > other._pitch
