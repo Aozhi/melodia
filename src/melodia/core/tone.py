@@ -175,22 +175,62 @@ class Tone:
         return Tone(pitch=self._pitch + transposition)
 
     def __str__(self) -> str:
+        """
+        Returns human-readable string interpretation of the tone (notation).
+
+        :return: string interpretation of the tone (notation)
+        """
         return self.to_notation()
 
     def __repr__(self) -> str:
+        """
+        Returns string interpretation of the tone.
+
+        :return: string interpretation of the tone
+        """
         return f'{self.__class__.__name__}(pitch={self._pitch})'
 
     def __eq__(self, other: 'Tone') -> bool:
+        """
+        Compares two tones for equality. Returns true if two tones have equal pitches.
+
+        :param other: other tone
+        :return: True of tones have equal pitches, False otherwise
+        """
         return self._pitch == other._pitch
 
     def __le__(self, other: 'Tone') -> bool:
+        """
+        Compares two tones by their pitches.
+
+        :param other: other tone
+        :return: True if this pitch tone is less or equal than other tone pitch, False otherwise
+        """
         return self._pitch <= other._pitch
 
     def __lt__(self, other: 'Tone') -> bool:
+        """
+        Compares two tones by their pitches.
+
+        :param other: other tone
+        :return: True if this pitch tone is less than other tone pitch, False otherwise
+        """
         return self._pitch < other._pitch
 
     def __ge__(self, other: 'Tone') -> bool:
+        """
+        Compares two tones by their pitches.
+
+        :param other: other tone
+        :return: True if this pitch tone is greater or equal than other tone pitch, False otherwise
+        """
         return self._pitch >= other._pitch
 
     def __gt__(self, other: 'Tone') -> bool:
+        """
+        Compares two tones by their pitches.
+
+        :param other: other tone
+        :return: True if this pitch tone is greater than other tone pitch, False otherwise
+        """
         return self._pitch > other._pitch
