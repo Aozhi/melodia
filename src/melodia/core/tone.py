@@ -176,17 +176,17 @@ class Tone:
 
     def __str__(self) -> str:
         """
-        Returns human-readable string interpretation of the tone (notation).
+        Returns human-readable string representation of the tone.
 
-        :return: string interpretation of the tone (notation)
+        :return: string interpretation of the tone
         """
         return self.to_notation()
 
     def __repr__(self) -> str:
         """
-        Returns string interpretation of the tone.
+        Returns string representation of the tone.
 
-        :return: string interpretation of the tone
+        :return: string representation of the tone
         """
         return f'{self.__class__.__name__}(pitch={self._pitch})'
 
