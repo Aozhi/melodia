@@ -10,8 +10,8 @@ class Note:
     def __init__(
             self,
             tone: Union[Tone, int, str],
-            duration: Union[Signature, Tuple[int, int]] = Signature(1, 1),
-            velocity: float = 0.9
+            duration: Union[Signature, Tuple[int, int]] = Signature(1, 4),
+            velocity: float = 0.75
     ):
         self._tone: Tone
         if isinstance(tone, Tone):

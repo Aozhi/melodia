@@ -10,7 +10,6 @@ class Track:
         '_signature',
         '_min_denominator',
         '_max_position',
-        '_max_duration',
         '_heap'
     )
 
@@ -30,7 +29,6 @@ class Track:
         self._min_denominator = 1
         self._heap: List[Tuple[Signature, Note]] = []
         self._max_position: Signature = Signature(0, 1)
-        self._max_duration: Signature = Signature(0, 1)
 
         if content is not None:
             for note, position in content:
@@ -54,7 +52,7 @@ class Track:
 
         position: Signature
         if where is None:
-            position = self._max_position + self._max_duration
+            position = self._max_position
         elif isinstance(where, Signature):
             position = where
         elif isinstance(where, Iterable):
@@ -71,9 +69,9 @@ class Track:
 
         heapq.heappush(self._heap, (position_transformed, note))
 
-        if position_transformed > self._max_position:
-            self._max_position = position_transformed
-            self._max_duration = note.duration
+        end_position = position_transformed + note.duration
+        if end_position > self._max_position:
+            self._max_position = end_position
 
     def __iter__(self) -> Iterable[Tuple[Signature, Note]]:
         return iter(sorted(self._heap))

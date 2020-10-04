@@ -5,7 +5,7 @@ from melodia.core.sgnature import Signature
 from melodia.core.tone import Tone
 from melodia.core.track import Track
 
-_middle_c_delta = 60 - Tone.from_notation('C4').pitch
+_middle_c_delta = 60 - Tone.from_notation('C3').pitch
 _pulses_per_quarter = 96
 _pulses_per_whole = _pulses_per_quarter * 4
 
@@ -31,11 +31,9 @@ def _format_var_len(x: int) -> bytes:
 def _format_signature(signature: Signature, cc: int, bb: int) -> bytes:
     nn = signature.nominator
     dd = signature.denominator.bit_length() - 1
-    cc = 36
-    bb = 8
 
     return b''.join([
-        '\xFF\x58\x04',
+        b'\xFF\x58\x04',
         nn.to_bytes(1, 'big'),
         dd.to_bytes(1, 'big'),
         cc.to_bytes(1, 'big'),
@@ -45,13 +43,13 @@ def _format_signature(signature: Signature, cc: int, bb: int) -> bytes:
 
 def _format_tempo(tempo: int) -> bytes:
     return b''.join([
-        '\xFF\x51\x03',
+        b'\xFF\x51\x03',
         tempo.to_bytes(3, 'big')
     ])
 
 
 def _format_note_on(note: Note, channel: int) -> bytes:
-    assert 0 < channel < 16
+    assert 0 <= channel <= 15
 
     status = 0x90 | channel
     pitch = note.tone.pitch + _middle_c_delta
@@ -71,7 +69,7 @@ def _format_note_on(note: Note, channel: int) -> bytes:
 
 
 def _format_note_off(note: Note, channel: int) -> bytes:
-    assert 0 < channel < 16
+    assert 0 <= channel <= 15
 
     status = 0x80 | channel
     pitch = note.tone.pitch + _middle_c_delta
