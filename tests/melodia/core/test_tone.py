@@ -3,11 +3,6 @@ import pytest
 from melodia.core.tone import Tone
 
 
-def test_tone_eq():
-    assert Tone(0) == Tone(0)
-    assert Tone(0) != Tone(1)
-
-
 def test_tone_str():
     for i in range(30):
         tone = Tone(i)
@@ -101,3 +96,15 @@ def test_note_with_transposed():
     n = Tone(152)
 
     assert n.transposed(1).transposed(5).transposed(-3) == n.transposed(3)
+
+
+def test_tone_eq():
+    assert Tone(0) == Tone(0)
+    assert Tone(0) != Tone(1)
+
+
+def test_tone_comp():
+    assert Tone(42) < Tone(43)
+    assert Tone(42) <= Tone(42)
+    assert Tone(42) >= Tone(42)
+    assert Tone(42) > Tone(41)
