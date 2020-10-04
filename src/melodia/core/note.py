@@ -11,7 +11,7 @@ class Note:
             self,
             tone: Union[Tone, int, str],
             duration: Union[Signature, Tuple[int, int]] = Signature(1, 1),
-            velocity: float = 1.0
+            velocity: float = 0.9
     ):
         self._tone: Tone
         if isinstance(tone, Tone):

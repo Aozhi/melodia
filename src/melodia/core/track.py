@@ -9,7 +9,7 @@ class Track:
     __slots__ = (
         '_signature',
         '_min_denominator',
-        '_max_signature',
+        '_max_position',
         '_max_duration',
         '_heap'
     )
@@ -27,9 +27,9 @@ class Track:
         else:
             raise ValueError('signature must be a Signature object or a pair of integers')
 
-        self._min_denominator = 0
+        self._min_denominator = 1
         self._heap: List[Tuple[Signature, Note]] = []
-        self._max_signature: Signature = Signature(0, 1)
+        self._max_position: Signature = Signature(0, 1)
         self._max_duration: Signature = Signature(0, 1)
 
         if content is not None:
@@ -54,7 +54,7 @@ class Track:
 
         position: Signature
         if where is None:
-            position = self._max_signature + self._max_duration
+            position = self._max_position + self._max_duration
         elif isinstance(where, Signature):
             position = where
         elif isinstance(where, Iterable):
@@ -62,7 +62,8 @@ class Track:
         else:
             raise ValueError('where must be a Signature object or a pair of integers')
 
-        if position.denominator < self._min_denominator:
+        # Condition is reversed since it is a denominator
+        if position.denominator > self._min_denominator:
             self._min_denominator = position.denominator
             self._heap = [(s.to(self._min_denominator), n) for s, n in self._heap]
 
@@ -70,12 +71,12 @@ class Track:
 
         heapq.heappush(self._heap, (position_transformed, note))
 
-        if position_transformed > self._max_signature:
-            self._max_signature = position_transformed
+        if position_transformed > self._max_position:
+            self._max_position = position_transformed
             self._max_duration = note.duration
 
     def __iter__(self) -> Iterable[Tuple[Signature, Note]]:
-        return sorted(self._heap)
+        return iter(sorted(self._heap))
 
     def __repr__(self) -> str:
         name = self.__class__.__name__

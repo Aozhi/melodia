@@ -5,10 +5,10 @@ class Signature:
     __slots__ = ('_nominator', '_denominator')
 
     def __init__(self, nominator: int, denominator: int):
-        if not (nominator > 0 and denominator > 0 and (denominator & (denominator - 1) == 0)):
+        if not (nominator >= 0 and denominator > 0 and (denominator & (denominator - 1) == 0)):
             raise ValueError(
                 'Invalid time signature '
-                '(both components must be positive and the second one must be a power of two)'
+                '(the nominator must be non-negative and the denominator must be a positive number of two)'
             )
 
         self._nominator = nominator
@@ -34,6 +34,15 @@ class Signature:
             return Signature(nominator, denominator)
 
         raise ValueError(f'New denominator must be >= {self._denominator}')
+
+    def normalized(self) -> 'Signature':
+        n, d = self._nominator, self._denominator
+
+        while n & 1 == 0 and d > 1:
+            n >>= 1
+            d >>= 1
+
+        return Signature(n, d)
 
     def _to_common_denominator(self, other: 'Signature') -> Tuple[int, int, int]:
         n1, d1 = self._nominator, self._denominator
