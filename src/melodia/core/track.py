@@ -24,7 +24,7 @@ class Track:
         elif isinstance(signature, Iterable):
             self._signature = Signature(*signature)
         else:
-            raise ValueError('signature must be a Signature object or a pair of integers')
+            raise TypeError('signature must be a Signature object or a pair of integers')
 
         self._min_denominator = 1
         self._heap: List[Tuple[Signature, Note]] = []
@@ -58,7 +58,7 @@ class Track:
         elif isinstance(where, Iterable):
             position = Signature(*where)
         else:
-            raise ValueError('where must be a Signature object or a pair of integers')
+            raise TypeError('where must be a Signature object or a pair of integers')
 
         # Condition is reversed since it is a denominator
         if position.denominator > self._min_denominator:

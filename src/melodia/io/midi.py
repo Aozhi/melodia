@@ -29,7 +29,7 @@ class MIDIBase:
         elif isinstance(middle_c, str):
             self._middle_c_delta = 60 - Tone.from_notation(middle_c).pitch
         else:
-            raise ValueError('middle_c must be a Tone object, an integer or a string')
+            raise TypeError('middle_c must be a Tone object, an integer or a string')
 
     def _signature_to_pulses(self, signature: Signature) -> int:
         normalized = signature.normalized()

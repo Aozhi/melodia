@@ -37,7 +37,7 @@ class Note:
         elif isinstance(tone, str):
             self._tone = Tone.from_notation(tone)
         else:
-            raise ValueError('tone must be a Tone object, an integer or a string')
+            raise TypeError('tone must be a Tone object, an integer or a string')
 
         self._duration: Signature
         if isinstance(duration, Signature):
@@ -45,7 +45,7 @@ class Note:
         elif isinstance(duration, Iterable):
             self._duration = Signature(*duration)
         else:
-            raise ValueError('duration must be a Signature object or a pair of integers')
+            raise TypeError('duration must be a Signature object or a pair of integers')
 
         if not 0.0 <= velocity <= 1.0:
             raise ValueError('velocity must be in range [0.0, 1.0]')
