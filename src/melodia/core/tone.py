@@ -192,7 +192,7 @@ class Tone:
 
     def __eq__(self, other: 'Tone') -> bool:
         """
-        Compares two tones for equality. Returns true if two tones have equal pitches.
+        Compares two tones for equality. Tones are equal if their pitches are equal.
 
         :param other: other tone
         :return: True of tones have equal pitches, False otherwise
