@@ -14,7 +14,8 @@ class Track:
         '_signature',
         '_max_denominator',
         '_max_position',
-        '_heap'
+        '_heap',
+        '_sorted'
     )
 
     def __init__(
@@ -39,6 +40,8 @@ class Track:
         self._max_denominator = 1
         self._heap: List[Tuple[Signature, Note]] = []
         self._max_position: Signature = Signature(0, 1)
+
+        self._sorted = True
 
         if content is not None:
             for note, position in content:
@@ -103,18 +106,39 @@ class Track:
         position_transformed = position.to(self._max_denominator)
 
         heapq.heappush(self._heap, (position_transformed, note))
+        self._sorted = False
 
         end_position = position_transformed + note.duration
         if end_position > self._max_position:
             self._max_position = end_position
 
     def __iter__(self) -> Iterable[Tuple[Signature, Note]]:
-        return iter(sorted(self._heap))
+        """
+        Returns track iterator. Iterator yields pairs (position, note) in order of ascending positions.
+        Position is the Signature object and note is the Note object.
+
+        :return: iterator of (position, note) pairs
+        """
+        if not self._sorted:
+            self._heap.sort()
+            self._sorted = True
+
+        return iter(self._heap)
 
     def __str__(self) -> str:
+        """
+        Returns human-readable string representation of the track.
+
+        :return: human-readable string representation of the track
+        """
         return f'Track {str(self._signature)} with {len(self._heap)} notes'
 
     def __repr__(self) -> str:
+        """
+        Returns string representation of the track.
+
+        :return: string representation of the track
+        """
         name = self.__class__.__name__
         signature = f'({self._signature.nominator}, {self._signature.denominator})'
 
