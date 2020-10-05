@@ -6,9 +6,13 @@ from melodia.core.sgnature import Signature
 
 
 class Track:
+    """
+    Track represents collection of notes where each note has its position.
+    Two or more notes with different tones can share same position.
+    """
     __slots__ = (
         '_signature',
-        '_min_denominator',
+        '_max_denominator',
         '_max_position',
         '_heap'
     )
@@ -18,6 +22,12 @@ class Track:
             signature: Union[Signature, Tuple[int, int]] = Signature(4, 4),
             content: Optional[Iterable[Tuple[Note, Union[Signature, Tuple[int, int], None]]]] = None,
     ):
+        """
+        Initializes Track object.
+
+        :param signature: time signature of the track (default: (4, 4))
+        :param content: optional content of the track as a list of pairs (note, position) (default: None)
+        """
         self._signature: Signature
         if isinstance(signature, Signature):
             self._signature = signature
@@ -26,7 +36,7 @@ class Track:
         else:
             raise TypeError('signature must be a Signature object or a pair of integers')
 
-        self._min_denominator = 1
+        self._max_denominator = 1
         self._heap: List[Tuple[Signature, Note]] = []
         self._max_position: Signature = Signature(0, 1)
 
@@ -36,20 +46,39 @@ class Track:
 
     @property
     def signature(self) -> Signature:
+        """
+        Returns time signature of the track.
+
+        :return: time signature of the track
+        """
         return self._signature
+
+    @property
+    def length(self) -> Signature:
+        """
+        Returns length of the track.
+        Length of the track is defined as the position after which
+        no note will be played. In other words it is the right-most ending of the note.
+
+        :return: length of the track
+        """
+        return self._max_position
 
     def add(
             self,
             what: Union[Note, Iterable[Note]],
             where: Union[Signature, Tuple[int, int], None] = None
     ) -> None:
-        if isinstance(what, Iterable):
-            for x in what:
-                self.add(x, where)
-            return
+        """
+        Adds note or multiple notes to the track to the specified position.
+        In the case of the multiple notes, all the notes will be placed in the same position.
+        If position is not specified, note or notes will be placed at the end of the track
+        (after the right-most ending of the note).
 
-        note: Note = what
-
+        :param what: one note or iterable of notes
+        :param where: position where note or multiple notes will be placed (default: None)
+        :return: None
+        """
         position: Signature
         if where is None:
             position = self._max_position
@@ -60,12 +89,18 @@ class Track:
         else:
             raise TypeError('where must be a Signature object or a pair of integers')
 
-        # Condition is reversed since it is a denominator
-        if position.denominator > self._min_denominator:
-            self._min_denominator = position.denominator
-            self._heap = [(s.to(self._min_denominator), n) for s, n in self._heap]
+        if isinstance(what, Iterable):
+            for x in what:
+                self.add(what=x, where=position)
+            return
 
-        position_transformed = position.to(self._min_denominator)
+        note: Note = what
+
+        if position.denominator > self._max_denominator:
+            self._max_denominator = position.denominator
+            self._heap = [(s.to(self._max_denominator), n) for s, n in self._heap]
+
+        position_transformed = position.to(self._max_denominator)
 
         heapq.heappush(self._heap, (position_transformed, note))
 
@@ -76,6 +111,9 @@ class Track:
     def __iter__(self) -> Iterable[Tuple[Signature, Note]]:
         return iter(sorted(self._heap))
 
+    def __str__(self) -> str:
+        return f'Track {str(self._signature)} with {len(self._heap)} notes'
+
     def __repr__(self) -> str:
         name = self.__class__.__name__
         signature = f'({self._signature.nominator}, {self._signature.denominator})'
@@ -85,6 +123,3 @@ class Track:
             contents.append(f'({repr(note)}, ({position.nominator}, {position.denominator}))')
 
         return f'{name}(signature={signature}, content=[{", ".join(contents)}])'
-
-    def __str__(self) -> str:
-        return f'Track {str(self._signature)} with {len(self._heap)} notes'
