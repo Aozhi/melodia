@@ -1,3 +1,4 @@
+import io
 from typing import BinaryIO, List, Tuple, Union
 
 from melodia.core.note import Note
@@ -188,5 +189,11 @@ class MIDIWriter(MIDIBase):
         file.write(self._format_chunk(b'MTrk', b''.join(track_body)))
 
 
-def dump(track: Track, file: BinaryIO, bpm: float = 120.0, channel: int = 0):
+def dump(track: Track, file: BinaryIO, bpm: float = 120.0, channel: int = 0) -> None:
     MIDIWriter(bpm=bpm, channel=channel).dump(track, file)
+
+
+def dumps(track: Track, bpm: float = 120.0, channel: int = 0) -> bytes:
+    with io.BytesIO() as file:
+        dump(track, file, bpm=bpm, channel=channel)
+        return file.getbuffer().tobytes()
