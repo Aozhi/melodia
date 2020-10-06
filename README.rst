@@ -2,8 +2,8 @@ Melodia
 =======
 
 .. image:: https://readthedocs.org/projects/melodia/badge/?version=latest
-    :target: https://melodia.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
+   :target: https://melodia.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
 
 Melodia is a Python library for MIDI music creation.
 
@@ -19,7 +19,7 @@ Melodia is fully typed and requires Python 3.6 or greater.
 
 .. code-block:: shell
 
-    pip install melodia
+   pip install melodia
     
 Documentation
 -------------
