@@ -1,6 +1,6 @@
 # Melodia
 
-Melodia is a Python library for working with music.
+Melodia is a Python library for MIDI music creation.
 
 ### Installation
 
