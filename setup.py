@@ -9,7 +9,7 @@ setup(
     version='1.0',
     description='Python library for MIDI music creation',
     long_description=long_description,
-    long_description_content_type='text/markdown',
+    long_description_content_type='text/x-rst',
     author='Egor Malykh',
     author_email='hello@meownoid.pro',
     url='https://github.com/meownoid/melodia',
