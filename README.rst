@@ -2,8 +2,8 @@ Melodia
 =======
 
 .. image:: https://readthedocs.org/projects/melodia/badge/?version=latest
-:target: https://melodia.readthedocs.io/en/latest/?badge=latest
-:alt: Documentation Status
+    :target: https://melodia.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 Melodia is a Python library for MIDI music creation.
 
