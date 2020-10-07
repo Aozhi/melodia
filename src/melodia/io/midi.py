@@ -7,18 +7,46 @@ from melodia.core.tone import Tone
 from melodia.core.track import Track
 
 
-class MIDIBase:
+class MIDIWriter:
+    """
+    MIDI writer capable of writing `Track` objects to MIDI Spec. 1.1 files.
+    It can be used to export your software-defined tracks to any DAW.
+    """
     __slots__ = (
         '_pulses_per_quarter',
         '_pulses_per_whole',
-        '_middle_c_delta'
+        '_middle_c_delta',
+        '_bpm',
+        '_channel'
     )
 
     def __init__(
             self,
             pulses_per_quarter: int = 96,
-            middle_c: Union[Tone, int, str] = 'C3'
+            middle_c: Union[Tone, int, str] = Tone.from_notation('C3'),
+            bpm: float = 120.0,
+            channel: int = 0
     ):
+        """
+        Initializes MIDIWriter object.
+
+        Pulses per quarter note defines maximum resolution of the MIDI events.
+        With this parameter equal to 1 one can not have notes shorter than 1/4.
+        Default value should be suitable for any software and track.
+
+        Middle C is a tone corresponding to integer value 60 in the MIDI specification.
+        For most of the modern software it is C3. If resulting MIDI files
+        is shifted by an octave in your software, use value 'C4'.
+
+        Beats per minute defines tempo of the track.
+
+        MIDI channel can be any value from 0 to 15.
+
+        :param pulses_per_quarter: number of pulses per quarter note (default: 96)
+        :param middle_c: middle c tone (default: 'C3')
+        :param bpm: beats per minute (default: 120.0)
+        :param channel: MIDI channel to write to (default: 0)
+        """
         self._pulses_per_quarter: int = pulses_per_quarter
         self._pulses_per_whole: int = pulses_per_quarter * 4
 
@@ -31,6 +59,9 @@ class MIDIBase:
             self._middle_c_delta = 60 - Tone.from_notation(middle_c).pitch
         else:
             raise TypeError('middle_c must be a Tone object, an integer or a string')
+
+        self._bpm = bpm
+        self._channel = channel
 
     def _signature_to_pulses(self, signature: Signature) -> int:
         normalized = signature.normalized()
@@ -126,27 +157,16 @@ class MIDIBase:
             ticks_per_quarter_note.to_bytes(2, 'big')
         ])
 
-        return MIDIBase._format_chunk(b'MThd', body)
-
-
-class MIDIWriter(MIDIBase):
-    __slots__ = ('_bpm', '_channel')
-
-    def __init__(
-            self,
-            pulses_per_quarter: int = 96,
-            middle_c: Union[Tone, int, str] = 'C3',
-            bpm: float = 120.0,
-            channel: int = 0
-    ):
-        super().__init__(
-            pulses_per_quarter=pulses_per_quarter,
-            middle_c=middle_c
-        )
-        self._bpm = bpm
-        self._channel = channel
+        return MIDIWriter._format_chunk(b'MThd', body)
 
     def dump(self, track: Track, file: BinaryIO) -> None:
+        """
+        Writes track to MIDI file.
+
+        :param track: track to write
+        :param file: binary file-like object
+        :return: None
+        """
         absolute_note_events: List[Tuple[int, bytes]] = []
         for position, note in track:
             note_on_absolute_time = self._signature_to_pulses(position)
@@ -190,10 +210,27 @@ class MIDIWriter(MIDIBase):
 
 
 def dump(track: Track, file: BinaryIO, bpm: float = 120.0, channel: int = 0) -> None:
+    """
+    Writes track to MIDI file. If you need more adjustable parameters, use `MIDIWriter` class.
+
+    :param track: track to write
+    :param file: binary file-like object
+    :param bpm: beats per minute
+    :param channel: MIDI channel to use
+    :return: None
+    """
     MIDIWriter(bpm=bpm, channel=channel).dump(track, file)
 
 
 def dumps(track: Track, bpm: float = 120.0, channel: int = 0) -> bytes:
+    """
+    Serializes track to MIDI format and returns it as array of bytes.
+
+    :param track: track to write
+    :param bpm: beats per minute
+    :param channel: MIDI channel to use
+    :return: track serialized to MIDI format (array of bytes)
+    """
     with io.BytesIO() as file:
         dump(track, file, bpm=bpm, channel=channel)
         return file.getbuffer().tobytes()
