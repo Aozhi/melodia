@@ -1,10 +1,10 @@
 import pytest
 
-from melodia.io.midi import MIDIBase
+from melodia.io.midi import MIDIWriter
 
 
 def test_format_var_len():
-    format_var_len = MIDIBase._format_var_len
+    format_var_len = MIDIWriter._format_var_len
 
     assert format_var_len(0x00000000) == bytes.fromhex('00')
     assert format_var_len(0x00000040) == bytes.fromhex('40')
@@ -21,7 +21,7 @@ def test_format_var_len():
 
 
 def test_format_chunk():
-    format_chunk = MIDIBase._format_chunk
+    format_chunk = MIDIWriter._format_chunk
 
     assert format_chunk(b'MThd', b'\x00\x7F\x00\x80\x90\xFF\x76') == \
            b'MThd\x00\x00\x00\x07\x00\x7F\x00\x80\x90\xFF\x76'
