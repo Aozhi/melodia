@@ -1,4 +1,5 @@
 import io
+from operator import itemgetter
 from typing import BinaryIO, List, Tuple, Union
 
 from melodia.core.note import Note
@@ -15,6 +16,7 @@ class MIDIWriter:
     __slots__ = (
         '_pulses_per_quarter',
         '_pulses_per_whole',
+        '_middle_c',
         '_middle_c_delta',
         '_bpm',
         '_channel'
@@ -47,8 +49,16 @@ class MIDIWriter:
         :param bpm: beats per minute (default: 120.0)
         :param channel: MIDI channel to write to (default: 0)
         """
+        if not 1 <= pulses_per_quarter <= 65535:
+            raise ValueError('pulses_per_quarter must be in range [1, 65535]')
+
+        if not 0 <= channel <= 15:
+            raise ValueError('channel must be in range [0, 15]')
+
         self._pulses_per_quarter: int = pulses_per_quarter
         self._pulses_per_whole: int = pulses_per_quarter * 4
+
+        self._middle_c = middle_c
 
         self._middle_c_delta: int
         if isinstance(middle_c, Tone):
@@ -66,20 +76,17 @@ class MIDIWriter:
     def _signature_to_pulses(self, signature: Signature) -> int:
         normalized = signature.normalized()
 
-        return self._pulses_per_whole // normalized.denominator * normalized.nominator
+        return self._pulses_per_whole * normalized.nominator // normalized.denominator
 
-    def _format_note_on(self, note: Note, channel: int) -> bytes:
-        assert 0 <= channel <= 15
-
-        status = 0x90 | channel
+    def _format_note_on(self, note: Note) -> bytes:
+        status = 0x90 | self._channel
         pitch = note.tone.pitch + self._middle_c_delta
 
         if not 0 <= pitch <= 127:
-            raise ValueError(f'Tone {str(note.tone)} can not be written to midi file')
+            raise ValueError(f'Tone {str(note.tone)} can not be written '
+                             f'to midi file with middle c equals to {str(self._middle_c)}')
 
-        velocity = int(note.velocity * 127)
-
-        assert 0 <= velocity <= 127
+        velocity = max(0, min(127, int(note.velocity * 127)))
 
         return b''.join([
             status.to_bytes(1, 'big'),
@@ -87,14 +94,13 @@ class MIDIWriter:
             velocity.to_bytes(1, 'big')
         ])
 
-    def _format_note_off(self, note: Note, channel: int) -> bytes:
-        assert 0 <= channel <= 15
-
-        status = 0x80 | channel
+    def _format_note_off(self, note: Note) -> bytes:
+        status = 0x80 | self._channel
         pitch = note.tone.pitch + self._middle_c_delta
 
         if not 0 <= pitch <= 127:
-            raise ValueError(f'Tone {str(note.tone)} can not be written to midi file')
+            raise ValueError(f'Tone {str(note.tone)} can not be written '
+                             f'to midi file with middle c equals to {str(self._middle_c)}')
 
         velocity = 64
 
@@ -138,23 +144,20 @@ class MIDIWriter:
 
     @staticmethod
     def _format_chunk(kind: bytes, body: bytes) -> bytes:
-        assert len(kind) == 4
+        assert len(kind) == 4, 'kind must be exactly 4 bytes long'
         return b''.join([kind, len(body).to_bytes(4, 'big'), body])
 
-    @staticmethod
     def _format_header_chunk(
+            self,
             kind: int,
-            n_tracks: int,
-            ticks_per_quarter_note: int
+            n_tracks: int
     ):
-        assert kind in (0, 1, 2)
-        assert n_tracks > 0
-        assert ticks_per_quarter_note < 0x7FFF
+        assert kind in (0, 1, 2), 'kind must be 0, 1 or 2'
 
         body = b''.join([
             kind.to_bytes(2, 'big'),
             n_tracks.to_bytes(2, 'big'),
-            ticks_per_quarter_note.to_bytes(2, 'big')
+            self._pulses_per_quarter.to_bytes(2, 'big')
         ])
 
         return MIDIWriter._format_chunk(b'MThd', body)
@@ -170,14 +173,14 @@ class MIDIWriter:
         absolute_note_events: List[Tuple[int, bytes]] = []
         for position, note in track:
             note_on_absolute_time = self._signature_to_pulses(position)
-            note_on_event = self._format_note_on(note, channel=self._channel)
+            note_on_event = self._format_note_on(note)
             note_off_absolute_time = note_on_absolute_time + self._signature_to_pulses(note.duration)
-            note_off_event = self._format_note_off(note, channel=self._channel)
+            note_off_event = self._format_note_off(note)
 
             absolute_note_events.append((note_on_absolute_time, note_on_event))
             absolute_note_events.append((note_off_absolute_time, note_off_event))
 
-        absolute_note_events.sort(key=lambda x: x[0])
+        absolute_note_events.sort(key=itemgetter(0))
 
         delta_events: List[Tuple[int, bytes]] = [
             # Time signature
@@ -194,14 +197,10 @@ class MIDIWriter:
         # End of track
         delta_events.append((0, b'\xFF\x2F\x00'))
 
-        # Header
-        file.write(self._format_header_chunk(
-            kind=0,
-            n_tracks=1,
-            ticks_per_quarter_note=self._pulses_per_quarter
-        ))
+        # Write header to file
+        file.write(self._format_header_chunk(kind=0, n_tracks=1))
 
-        # Track
+        # Write track to file
         track_body: List[bytes] = []
         for delta_time, event in delta_events:
             track_body.append(self._format_var_len(delta_time))
