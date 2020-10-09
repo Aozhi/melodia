@@ -349,6 +349,7 @@ class _EventGlobalChannel(_Event):
 class MIDIReader:
     """
     MIDI reader capable of parsing MIDI Spec. 1.1 files into `~melodia.core.track.Track` objects.
+    This reader DOES NOT IMPLEMENT full spec and supports only two MIDI events: Note ON and Note OFF.
     """
     __slots__ = (
         '_middle_c',
