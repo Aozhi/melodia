@@ -1,6 +1,19 @@
+import random
+
 import pytest
 
 from melodia.core import Track, Signature, Note
+
+
+def random_track():
+    track = Track(signature=(random.randint(0, 100), 16))
+
+    for _ in range(random.randint(100, 300)):
+        note = Note(random.randint(-100, 100), (random.randint(0, 100), 16))
+        position = (random.randint(0, 10000), random.choice([1, 2, 4, 8, 16, 32, 64, 128, 256, 512]))
+        track.add(note, position)
+
+    return track
 
 
 def test_track_basics():
@@ -69,3 +82,12 @@ def test_track_add():
         (Signature(1, 4), Note(1, (1, 4))),
         (Signature(13, 1), Note(42, (8, 1)))
     ]
+
+
+def test_track_eq():
+    assert Track(signature=(17, 16), content=[]) == Track(signature=(17, 16), content=[])
+    assert Track(signature=(15, 16), content=[]) != Track(signature=(17, 16), content=[])
+
+    for _ in range(10):
+        track = random_track()
+        assert track == track

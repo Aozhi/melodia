@@ -19,7 +19,7 @@ any DAW.
 Installation
 ------------
 
-Melodia is fully typed and requires Python 3.6 or greater.
+Melodia is fully typed and requires Python 3.7 or greater.
 
 .. code-block:: shell
 

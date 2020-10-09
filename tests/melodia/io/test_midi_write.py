@@ -12,7 +12,7 @@ def test_midi_basics():
         MIDIWriter(pulses_per_quarter=-10)
 
     with pytest.raises(ValueError):
-        MIDIWriter(pulses_per_quarter=65536)
+        MIDIWriter(pulses_per_quarter=32768)
 
     with pytest.raises(ValueError):
         MIDIWriter(channel=-1)

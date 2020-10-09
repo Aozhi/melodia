@@ -112,6 +112,24 @@ class Track:
         if end_position > self._max_position:
             self._max_position = end_position
 
+    def __eq__(self, other: 'Track') -> bool:
+        """
+        Compares two tracks for equality. Tracks are equal if their signatures and contents are equal.
+
+        :param other: other track
+        :return: True if tracks are equal, False otherwise
+        """
+
+        if self._signature != other._signature:
+            return False
+
+        for (ap, an), (bp, bn) in zip(self, other):
+            if an != bn or ap != bp:
+                return False
+
+        return True
+
+
     def __iter__(self) -> Iterable[Tuple[Signature, Note]]:
         """
         Returns track iterator. Iterator yields pairs (position, note) in order of ascending positions.
