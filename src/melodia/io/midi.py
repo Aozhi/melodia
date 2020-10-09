@@ -26,14 +26,18 @@ class _Reader:
         self._idx = 0
 
     def read(self, n: int) -> bytes:
+        if len(self._data) - self._idx < n:
+            self._idx = len(self._data)
+            raise MIDIParsingError('Invalid MIDI file: unexpected end of data')
         result = self._data[self._idx:self._idx + n]
         self._idx += n
-        if len(result) < n:
-            raise MIDIParsingError('Invalid MIDI file: unexpected end of data')
         return result
 
     def shift(self, n: int) -> None:
         self._idx += n
+
+    def __len__(self) -> int:
+        return len(self._data)
 
 
 class MIDIWriter:
@@ -405,6 +409,8 @@ class MIDIReader:
 
     @staticmethod
     def _time_to_signature(time: int, ticks_per_quarter: int) -> Signature:
+        assert ticks_per_quarter > 0, 'ticks_per_quarter must be positive'
+
         return Signature(time * 4096 // ticks_per_quarter, 4 * 4096).normalized()
 
     def _pitch_to_tone(self, pitch: int) -> Tone:
