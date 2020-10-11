@@ -56,11 +56,14 @@ def {name}(
         velocity: Optional[float] = None
 ) -> {return_type}:
     \"\"\"
-    This function generates {full_name} chord.
+    Generates {full_name} chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of {number} notes
     \"\"\"
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)

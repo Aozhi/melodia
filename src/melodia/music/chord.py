@@ -45,11 +45,14 @@ def major(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Major Triad chord.
+    Generates Major Triad chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -67,11 +70,14 @@ def maj(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Major Triad chord.
+    Generates Major Triad chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -89,11 +95,14 @@ def minor(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Minor Triad chord.
+    Generates Minor Triad chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -111,11 +120,14 @@ def min(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Minor Triad chord.
+    Generates Minor Triad chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -133,11 +145,14 @@ def augmented(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Augmented Triad chord.
+    Generates Augmented Triad chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -155,11 +170,14 @@ def aug(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Augmented Triad chord.
+    Generates Augmented Triad chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -177,11 +195,14 @@ def diminished(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Diminished Triad chord.
+    Generates Diminished Triad chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -199,11 +220,14 @@ def dim(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Diminished Triad chord.
+    Generates Diminished Triad chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -221,11 +245,14 @@ def suspended4(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Suspended Fourth chord.
+    Generates Suspended Fourth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -243,11 +270,14 @@ def sus4(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Suspended Fourth chord.
+    Generates Suspended Fourth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -265,11 +295,14 @@ def suspended2(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Suspended Second chord.
+    Generates Suspended Second chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -287,11 +320,14 @@ def sus2(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Suspended Second chord.
+    Generates Suspended Second chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -309,11 +345,14 @@ def major7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Major Seventh chord.
+    Generates Major Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -332,11 +371,14 @@ def maj7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Major Seventh chord.
+    Generates Major Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -355,11 +397,14 @@ def minor7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Minor Seventh chord.
+    Generates Minor Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -378,11 +423,14 @@ def min7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Minor Seventh chord.
+    Generates Minor Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -401,11 +449,14 @@ def dominant7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Dominant Seventh chord.
+    Generates Dominant Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -424,11 +475,14 @@ def dom7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Dominant Seventh chord.
+    Generates Dominant Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -447,11 +501,14 @@ def dominant7b5(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Dominant Seventh Flat Five chord.
+    Generates Dominant Seventh Flat Five chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -470,11 +527,14 @@ def dom7b5(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Dominant Seventh Flat Five chord.
+    Generates Dominant Seventh Flat Five chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -493,11 +553,14 @@ def diminished7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Diminished Seventh chord.
+    Generates Diminished Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -516,11 +579,14 @@ def dim7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Diminished Seventh chord.
+    Generates Diminished Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -539,11 +605,14 @@ def minor7b5(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Half Diminished Seventh chord.
+    Generates Half Diminished Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -562,11 +631,14 @@ def min7b5(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Half Diminished Seventh chord.
+    Generates Half Diminished Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -585,11 +657,14 @@ def diminished_major7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Diminished Major Seventh chord.
+    Generates Diminished Major Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -608,11 +683,14 @@ def minor_major7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Minor Major Seventh chord.
+    Generates Minor Major Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -631,11 +709,14 @@ def augmented_major7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Augmented Major Seventh chord.
+    Generates Augmented Major Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -654,11 +735,14 @@ def major7s5(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Augmented Major Seventh chord.
+    Generates Augmented Major Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -677,11 +761,14 @@ def maj7s5(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Augmented Major Seventh chord.
+    Generates Augmented Major Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -700,11 +787,14 @@ def augmented_minor7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Augmented Minor Seventh chord.
+    Generates Augmented Minor Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -723,11 +813,14 @@ def augmented7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Augmented Minor Seventh chord.
+    Generates Augmented Minor Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -746,11 +839,14 @@ def aug7(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note]:
     """
-    This function generates Augmented Minor Seventh chord.
+    Generates Augmented Minor Seventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 4 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -769,11 +865,14 @@ def major9(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note]:
     """
-    This function generates Major Ninth chord.
+    Generates Major Ninth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 5 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -793,11 +892,14 @@ def maj9(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note]:
     """
-    This function generates Major Ninth chord.
+    Generates Major Ninth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 5 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -817,11 +919,14 @@ def minor9(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note]:
     """
-    This function generates Minor Ninth chord.
+    Generates Minor Ninth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 5 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -841,11 +946,14 @@ def min9(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note]:
     """
-    This function generates Minor Ninth chord.
+    Generates Minor Ninth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 5 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -865,11 +973,14 @@ def dominant9(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note]:
     """
-    This function generates Dominant Ninth chord.
+    Generates Dominant Ninth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 5 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -889,11 +1000,14 @@ def dom9(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note]:
     """
-    This function generates Dominant Ninth chord.
+    Generates Dominant Ninth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 5 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -913,11 +1027,14 @@ def dominant_minor9(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note]:
     """
-    This function generates Dominant Minor Ninth chord.
+    Generates Dominant Minor Ninth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 5 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -937,11 +1054,14 @@ def min7b9(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note]:
     """
-    This function generates Dominant Minor Ninth chord.
+    Generates Dominant Minor Ninth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 5 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -961,11 +1081,14 @@ def minor69(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note]:
     """
-    This function generates 6/9 chord.
+    Generates 6/9 chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 5 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -985,11 +1108,14 @@ def min69(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note]:
     """
-    This function generates 6/9 chord.
+    Generates 6/9 chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 5 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -1009,11 +1135,14 @@ def added9(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Added Ninth chord.
+    Generates Added Ninth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -1031,11 +1160,14 @@ def add9(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note]:
     """
-    This function generates Added Ninth chord.
+    Generates Added Ninth chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 3 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -1053,11 +1185,14 @@ def major11(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note, Note]:
     """
-    This function generates Major Eleventh chord.
+    Generates Major Eleventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 6 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -1078,11 +1213,14 @@ def maj11(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note, Note]:
     """
-    This function generates Major Eleventh chord.
+    Generates Major Eleventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 6 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -1103,11 +1241,14 @@ def minor11(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note, Note]:
     """
-    This function generates Minor Eleventh chord.
+    Generates Minor Eleventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 6 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -1128,11 +1269,14 @@ def min11(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note, Note]:
     """
-    This function generates Minor Eleventh chord.
+    Generates Minor Eleventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 6 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -1153,11 +1297,14 @@ def dominant11(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note, Note]:
     """
-    This function generates Dominant Eleventh chord.
+    Generates Dominant Eleventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 6 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
@@ -1178,11 +1325,14 @@ def dom11(
         velocity: Optional[float] = None
 ) -> Tuple[Note, Note, Note, Note, Note, Note]:
     """
-    This function generates Dominant Eleventh chord.
+    Generates Dominant Eleventh chord. If note is provided as the first argument, duration and 
+    velocity of this note will be used as default values for chord duration and velocity.
+    Otherwise :class:`~melodia.core.note.Note` defaults will be used.
 
-    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
-    :param duration: duration of the chord
-    :param velocity: velocity of the chord
+    :param base: base tone
+    (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
+    :param duration: duration of the chord (default: None)
+    :param velocity: velocity of the chord (default: None)
     :return: tuple of 6 notes
     """
     base_tone, base_duration, base_velocity = _get_parameters(base, duration, velocity)
