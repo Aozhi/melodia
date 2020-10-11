@@ -29,3 +29,26 @@ Documentation
 -------------
 
 Documentation is available at `melodia.readthedocs.io <https://melodia.readthedocs.io/>`_.
+
+
+Example
+--------
+
+.. code-block:: python
+
+   from melodia.core.track import Track
+   from melodia.music import chord
+   from melodia.io import midi
+
+   track = Track(signature=(4, 4))
+
+   track.add(chord.maj('C3', (1, 1)))
+   track.add(chord.maj('D3', (1, 1)))
+   track.add(chord.min('A3', (1, 1)))
+   track.add(chord.maj7('G3', (1, 1)))
+
+   with open('chords.mid', 'wb') as f:
+       midi.dump(track, f)
+
+.. image:: https://storage.yandexcloud.net/meownoid-pro-static/external/github/melodia/ableton-chords.png
+   :alt: Ableton Live 10 with imported chords
