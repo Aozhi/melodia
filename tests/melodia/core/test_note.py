@@ -45,6 +45,30 @@ def test_note_transposed():
     assert n1.velocity == n2.velocity
 
 
+def test_note_with_duration():
+    n1 = Note('A4', (3, 8))
+    n2 = n1.with_duration((7, 4))
+
+    assert n1.tone == n2.tone
+
+    assert n1.duration == Signature(3, 8)
+    assert n2.duration == Signature(7, 4)
+
+    assert n1.velocity == n2.velocity
+
+
+def test_note_with_velocity():
+    n1 = Note('A4', (3, 8), velocity=0.43)
+    n2 = n1.with_velocity(0.86)
+
+    assert n1.tone == n2.tone
+    assert n1.duration.nominator == n2.duration.nominator
+    assert n1.duration.denominator == n2.duration.denominator
+
+    assert n1.velocity == 0.43
+    assert n2.velocity == 0.86
+
+
 def test_note_eq():
     assert Note('C4') == Note('C4')
     assert Note('C4') != Note('C5')

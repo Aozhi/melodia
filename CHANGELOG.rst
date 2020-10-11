@@ -1,6 +1,23 @@
 Changelog
 =========
 
+1.2 - Unreleased
+----------------
+
+Added
+#####
+
+- New module ``melodia.processing`` which should contain algorithms of track processing
+- New function ``melodia.processing.track.randomize_velocities``
+- New method ``Note.with_duration``
+- New method ``Note.with_velocity``
+- New method ``Track.__len__`` which returns number of notes in the track
+
+Fixed
+#######
+
+- Fixed chord docstrings
+
 1.1 - 11.10.2020
 ----------------
 

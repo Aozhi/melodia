@@ -81,15 +81,41 @@ class Note:
 
     def transposed(self, transposition: int) -> 'Note':
         """
-        Returns note with transposed tone. Velocity and duration remains the same.
+        Returns note with transposed tone. Duration and velocity remains the same.
 
         :param transposition: integer number of semitones to transpose tone
         :return: note with transposed tone
         """
         return Note(
             tone=self._tone.transposed(transposition),
-            velocity=self._velocity,
-            duration=self._duration
+            duration=self._duration,
+            velocity=self._velocity
+        )
+
+    def with_duration(self, duration: Union[Signature, Tuple[int, int]]) -> 'Note':
+        """
+        Returns note with new duration. Tone and velocity remains the same.
+
+        :param duration: new duration
+        :return: note with new duration
+        """
+        return Note(
+            tone=self._tone,
+            duration=duration,
+            velocity=self._velocity
+        )
+
+    def with_velocity(self, velocity: float) -> 'Note':
+        """
+        Returns note with new velocity. Tone and duration remains the same.
+
+        :param velocity: new velocity
+        :return: note with new velocity
+        """
+        return Note(
+            tone=self._tone,
+            duration=self._duration,
+            velocity=velocity
         )
 
     def _as_triplet(self) -> Tuple[Tone, Signature, float]:

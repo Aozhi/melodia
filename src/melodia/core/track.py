@@ -129,7 +129,6 @@ class Track:
 
         return True
 
-
     def __iter__(self) -> Iterable[Tuple[Signature, Note]]:
         """
         Returns track iterator. Iterator yields pairs (position, note) in order of ascending positions.
@@ -142,6 +141,14 @@ class Track:
             self._sorted = True
 
         return iter(self._heap)
+
+    def __len__(self) -> int:
+        """
+        Returns number of notes in the track.
+
+        :return: number of notes in the track
+        """
+        return len(self._heap)
 
     def __str__(self) -> str:
         """
