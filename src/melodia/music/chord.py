@@ -47,7 +47,7 @@ def major(
     """
     This function generates Major Triad chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -69,7 +69,7 @@ def maj(
     """
     This function generates Major Triad chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -91,7 +91,7 @@ def minor(
     """
     This function generates Minor Triad chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -113,7 +113,7 @@ def min(
     """
     This function generates Minor Triad chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -135,7 +135,7 @@ def augmented(
     """
     This function generates Augmented Triad chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -157,7 +157,7 @@ def aug(
     """
     This function generates Augmented Triad chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -179,7 +179,7 @@ def diminished(
     """
     This function generates Diminished Triad chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -201,7 +201,7 @@ def dim(
     """
     This function generates Diminished Triad chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -223,7 +223,7 @@ def suspended4(
     """
     This function generates Suspended Fourth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -245,7 +245,7 @@ def sus4(
     """
     This function generates Suspended Fourth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -267,7 +267,7 @@ def suspended2(
     """
     This function generates Suspended Second chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -289,7 +289,7 @@ def sus2(
     """
     This function generates Suspended Second chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -311,7 +311,7 @@ def major7(
     """
     This function generates Major Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -334,7 +334,7 @@ def maj7(
     """
     This function generates Major Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -357,7 +357,7 @@ def minor7(
     """
     This function generates Minor Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -380,7 +380,7 @@ def min7(
     """
     This function generates Minor Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -403,7 +403,7 @@ def dominant7(
     """
     This function generates Dominant Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -426,7 +426,7 @@ def dom7(
     """
     This function generates Dominant Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -449,7 +449,7 @@ def dominant7b5(
     """
     This function generates Dominant Seventh Flat Five chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -472,7 +472,7 @@ def dom7b5(
     """
     This function generates Dominant Seventh Flat Five chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -495,7 +495,7 @@ def diminished7(
     """
     This function generates Diminished Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -518,7 +518,7 @@ def dim7(
     """
     This function generates Diminished Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -541,7 +541,7 @@ def minor7b5(
     """
     This function generates Half Diminished Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -564,7 +564,7 @@ def min7b5(
     """
     This function generates Half Diminished Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -587,7 +587,7 @@ def diminished_major7(
     """
     This function generates Diminished Major Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -610,7 +610,7 @@ def minor_major7(
     """
     This function generates Minor Major Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -633,7 +633,7 @@ def augmented_major7(
     """
     This function generates Augmented Major Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -656,7 +656,7 @@ def major7s5(
     """
     This function generates Augmented Major Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -679,7 +679,7 @@ def maj7s5(
     """
     This function generates Augmented Major Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -702,7 +702,7 @@ def augmented_minor7(
     """
     This function generates Augmented Minor Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -725,7 +725,7 @@ def augmented7(
     """
     This function generates Augmented Minor Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -748,7 +748,7 @@ def aug7(
     """
     This function generates Augmented Minor Seventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 4 notes
@@ -771,7 +771,7 @@ def major9(
     """
     This function generates Major Ninth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 5 notes
@@ -795,7 +795,7 @@ def maj9(
     """
     This function generates Major Ninth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 5 notes
@@ -819,7 +819,7 @@ def minor9(
     """
     This function generates Minor Ninth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 5 notes
@@ -843,7 +843,7 @@ def min9(
     """
     This function generates Minor Ninth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 5 notes
@@ -867,7 +867,7 @@ def dominant9(
     """
     This function generates Dominant Ninth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 5 notes
@@ -891,7 +891,7 @@ def dom9(
     """
     This function generates Dominant Ninth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 5 notes
@@ -915,7 +915,7 @@ def dominant_minor9(
     """
     This function generates Dominant Minor Ninth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 5 notes
@@ -939,7 +939,7 @@ def min7b9(
     """
     This function generates Dominant Minor Ninth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 5 notes
@@ -963,7 +963,7 @@ def minor69(
     """
     This function generates 6/9 chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 5 notes
@@ -987,7 +987,7 @@ def min69(
     """
     This function generates 6/9 chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 5 notes
@@ -1011,7 +1011,7 @@ def added9(
     """
     This function generates Added Ninth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -1033,7 +1033,7 @@ def add9(
     """
     This function generates Added Ninth chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 3 notes
@@ -1055,7 +1055,7 @@ def major11(
     """
     This function generates Major Eleventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 6 notes
@@ -1080,7 +1080,7 @@ def maj11(
     """
     This function generates Major Eleventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 6 notes
@@ -1105,7 +1105,7 @@ def minor11(
     """
     This function generates Minor Eleventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 6 notes
@@ -1130,7 +1130,7 @@ def min11(
     """
     This function generates Minor Eleventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 6 notes
@@ -1155,7 +1155,7 @@ def dominant11(
     """
     This function generates Dominant Eleventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 6 notes
@@ -1180,7 +1180,7 @@ def dom11(
     """
     This function generates Dominant Eleventh chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of 6 notes

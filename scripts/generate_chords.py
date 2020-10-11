@@ -58,7 +58,7 @@ def {name}(
     \"\"\"
     This function generates {full_name} chord.
 
-    :param base: base tone (can be integer, string, ~`melodia.core.tone.Tone` or ~`melodia.core.note.Note`)
+    :param base: base tone (can be integer, string, :class:`~melodia.core.tone.Tone` or :class:`~melodia.core.note.Note`)
     :param duration: duration of the chord
     :param velocity: velocity of the chord
     :return: tuple of {number} notes
