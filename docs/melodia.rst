@@ -9,6 +9,7 @@ Subpackages
 
    melodia.core
    melodia.io
+   melodia.music
 
 Module contents
 ---------------
