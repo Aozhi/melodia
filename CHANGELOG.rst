@@ -14,6 +14,11 @@ Added
 - Tests for MIDI reader
 - Documentation for Tone class
 
+Changed
+#######
+
+- Fixed typo in the internal package name: ``melodia.core.sgnature`` to ``melodia.core.signature``
+
 1.0 - 06.10.2020
 ----------------
 
