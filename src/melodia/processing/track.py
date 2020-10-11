@@ -9,7 +9,7 @@ def randomize_velocities(
         minimum: float = 0.5,
         maximum: float = 1.0,
         mean: float = 0.75,
-        variance: float = 0.25
+        variance: float = 0.01
 ) -> Track:
     """
     Randomizes velocities of the notes in the track.
@@ -19,7 +19,7 @@ def randomize_velocities(
     :param minimum: minimum velocity (default: 0.5)
     :param maximum: maximum velocity (default: 1.0)
     :param mean: mean velocity (default: 0.75)
-    :param variance: velocity variance (default: 0.25)
+    :param variance: velocity variance (default: 0.01)
     :return: new track with randomized velocities
     """
     if not 0 <= minimum <= 1.0:
