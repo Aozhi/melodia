@@ -36,7 +36,7 @@ Example
 
 .. code-block:: python
 
-   from melodia.core.track import Track
+   from melodia.core import Track
    from melodia.music import chord
    from melodia.io import midi
 
