@@ -6,7 +6,7 @@ with open('README.rst', 'r') as f:
 
 setup(
     name='melodia',
-    version='1.0',
+    version='1.1',
     description='Python library for MIDI music creation',
     long_description=long_description,
     long_description_content_type='text/x-rst',
