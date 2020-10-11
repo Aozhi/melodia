@@ -40,6 +40,9 @@ class Tone:
 
         :param pitch: any integer number corresponding to tone number in chromatic scale
         """
+        if not isinstance(pitch, int):
+            raise ValueError('Pitch must be an integer, to construct tone from notation use Tone.from_notation')
+
         self._pitch = pitch
 
     @property
