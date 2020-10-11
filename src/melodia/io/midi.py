@@ -5,7 +5,7 @@ from operator import itemgetter
 from typing import BinaryIO, List, Tuple, Union, Optional, Dict, Generator
 
 from melodia.core.note import Note
-from melodia.core.sgnature import Signature
+from melodia.core.signature import Signature
 from melodia.core.tone import Tone
 from melodia.core.track import Track
 

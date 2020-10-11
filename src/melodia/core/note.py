@@ -1,6 +1,6 @@
 from typing import Tuple, Union, Iterable
 
-from melodia.core.sgnature import Signature
+from melodia.core.signature import Signature
 from melodia.core.tone import Tone
 
 

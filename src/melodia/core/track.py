@@ -2,7 +2,7 @@ import heapq
 from typing import Iterable, Tuple, Union, List, Optional
 
 from melodia.core.note import Note
-from melodia.core.sgnature import Signature
+from melodia.core.signature import Signature
 
 
 class Track:

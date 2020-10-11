@@ -1,7 +1,7 @@
 from typing import Sequence
 
 from .tone import Tone
-from .sgnature import Signature
+from .signature import Signature
 from .note import Note
 from .track import Track
 
